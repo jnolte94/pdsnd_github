@@ -8,10 +8,13 @@ CITY_DATA = { 'chicago': 'chicago.csv',
               'washington': 'washington.csv' }
 
 # WEEKDAYS dict (maps weekday names to weekday numbers that are used within the dataframe)
-WEEKDAYS = {'monday': 0, 'tuesday': 1, 'wednesday': 2, 'thursday': 3, 'friday': 4, 'saturday': 5, 'sunday': 6}
+WEEKDAYS = {'monday': 0, 'tuesday': 1, 'wednesday': 2, 
+            'thursday': 3, 'friday': 4, 'saturday': 5, 
+            'sunday': 6}
 
-# MONTHS dict (maps month names to month numbers that are used within the dataframe )
-MONTHS = {'january': 1, 'february': 2, 'march': 3, 'april': 4, 'may': 5, 'june': 6}
+# MONTHS dict (maps month names to month numbers that are used within the dataframe)
+MONTHS = {'january': 1, 'february': 2, 'march': 3, 
+          'april': 4, 'may': 5, 'june': 6}
 
 def get_filters():
     """
@@ -55,7 +58,6 @@ Please enter Chicago, New York City or Washington. \n\
     print('-'*40)
     return city.lower(), month.lower(), day.lower()
 
-
 def load_data(city, month, day):
     """
     Loads data for the specified city and filters by month and day if applicable.
@@ -87,7 +89,6 @@ def load_data(city, month, day):
 
     return df
 
-
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
 
@@ -106,7 +107,6 @@ def time_stats(df):
     # display the most common start hour
     top_start_hour = df['hour'].mode()[0]
     print("The most frequent start hour is: {}".format(top_start_hour))
-
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
