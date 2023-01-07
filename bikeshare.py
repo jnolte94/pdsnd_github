@@ -79,13 +79,13 @@ def load_data(city, month, day):
 
     # filter df on month
     if month != 'all':
-        month = MONTHS[month]
-        df = df[df['month'] == month]
+        month_number = MONTHS[month]
+        df = df[df['month'] == month_number]
 
     # filter df on weekday
     if day != 'all':
-        day = WEEKDAYS[day]
-        df = df[df['day_of_week'] == day]
+        day_number = WEEKDAYS[day]
+        df = df[df['day_of_week'] == day_number]
 
     return df
 
