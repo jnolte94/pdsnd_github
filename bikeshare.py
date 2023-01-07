@@ -107,6 +107,7 @@ def time_stats(df):
     top_start_hour = df['hour'].mode()[0]
     print("The most frequent start hour is: {}".format(top_start_hour))
 
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -184,7 +185,13 @@ def user_stats(df):
     print('-'*40)
 
 def raw_data_display(df, num_rows_per_promt=5):
-    """Displays raw data in df in chunks of num_rows_per_prompt (default = 5) lines as longer as user chooses to view more data."""
+    """
+    Displays raw data in df in chunks as longer as user chooses to view more data.
+
+    Args:
+        (str) df - data frame to view
+        (int) num_rows_per_prompt - number of rows to show at once (default=5)
+    """
 
     show_raw_data = input("Would you also like to see {} trips for your chosen filters (yes/no)?\n>".format(num_rows_per_promt))
     if show_raw_data.lower() == "yes":
